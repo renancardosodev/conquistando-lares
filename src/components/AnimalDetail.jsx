@@ -3,6 +3,10 @@ import "../styles/AnimalDetail.css";
 import voltar from "../assets/voltar.png";
 import esquerda from "../assets/seta-esquerda.png";
 import direita from "../assets/seta-direita.png";
+import male from "../assets/male.png";
+import female from "../assets/female.png";
+import mapa from "../assets/map.png";
+
 
 function AnimalDetail({ animal, onClose }) {
   const [isMobile, setIsMobile] = useState(false);
@@ -99,14 +103,14 @@ function AnimalDetail({ animal, onClose }) {
         <div className="name-location-container">
           <strong className="animal-name">{animal.nome}</strong>
           <span className="location-info">
-            <img src="/map.png" alt="Localização" className="icon-small" />
+            <img src = {mapa} alt="Localização" className="icon-small" />
             {animal.bairro} - {animal.estado}
           </span>
         </div>
 
         <div className="sex-icon-container">
           <img
-            src={animal.sexo === "M" ? "/male.png" : "/female.png"}
+            src={animal.sexo === "M" ? male : female}
             alt={animal.sexo === "M" ? "Masculino" : "Feminino"}
             className="icon-sex"
           />

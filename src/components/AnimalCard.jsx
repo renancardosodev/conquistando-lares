@@ -1,5 +1,8 @@
 import React from "react";
 import "../styles/AnimalCard.css";
+import male from "../assets/male.png";
+import female from "../assets/female.png";
+import mapa from "../assets/map.png";
 
 function AnimalCard({ animal, onClick }) {
   return (
@@ -20,7 +23,7 @@ function AnimalCard({ animal, onClick }) {
         <div className="info-left">
           <strong>{animal.nome}</strong>
           <span className="location-info">
-            <img src="/map.png" alt="Localização" className="icon-small" />
+            <img src= {mapa} alt="Localização" className="icon-small" />
             {animal.bairro} - {animal.estado}
           </span>
         </div>
@@ -31,7 +34,7 @@ function AnimalCard({ animal, onClick }) {
           role="img"
         >
           <img
-            src={animal.sexo === "M" ? "/male.png" : "/female.png"}
+            src={animal.sexo === "M" ?  male : female}
             alt={animal.sexo === "M" ? "Masculino" : "Feminino"}
             className="icon-sex"
           />
