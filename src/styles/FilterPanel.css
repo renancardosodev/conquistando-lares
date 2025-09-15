@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* ====== Painel de Filtros ====== */
+.filter-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  max-width: 90vw;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -4px 0 10px rgba(0,0,0,0.15);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  z-index: 1000;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Conteúdo do filtro com scroll */
+.filter-content {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  padding-right: 8px;
+  padding-bottom: 24px;
+}
+
+/* Botões fixos no rodapé */
+.filter-actions {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+  background: #fff;
+  margin-top: 30px;
+}
+
+/* Botões filtrar e limpar */
+.filter-actions button {
+  flex: 1;
+  padding: 14px 0;
+  font-weight: 700;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.filter-actions button.filter-btn {
+  background-color: #FCA84B;
+}
+
+.filter-actions button.filter-btn:hover,
+.filter-actions button.filter-btn:focus {
+  background-color: #FCA84B;
+  outline: none;
+}
+
+.filter-actions button.clear-btn {
+  background: transparent; 
+  border: none;            
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0;               
+  transition: color 0.2s ease;
+}
+
+.filter-actions button.clear-btn:hover,
+.filter-actions button.clear-btn:focus {
+  outline: none;
+}
+
+
+/* Botão fechar painel */
+.close-btn {
+  align-self: flex-end;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+/* Título */
+h3 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #222;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+/* Grupos de filtros */
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.filter-group label {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #444;
+  padding-top: 10px;
+}
+
+/* Select styling */
+.filter-group select {
+  padding: 8px 0;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1.5px solid #ccc;
+  transition: border-color 0.2s ease;
+}
+
+.filter-group select:focus {
+  border-color: #0077ff;
+  outline: none;
+}
+
+/* Range slider styling */
+.filter-group input[type="range"] {
+  width: 100%;
+  height: 8px;
+  background: #ddd;
+  border-radius: 6px;
+  outline: none;
+  margin: 8px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.filter-group input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #0077ff;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 2px rgba(0,0,0,0.3);
+  margin-top: -6px;
+  position: relative;
+  z-index: 2;
+  transition: background-color 0.3s ease;
+}
+
+.filter-group input[type="range"]::-webkit-slider-thumb:hover {
+  background: #005fcc;
+}
+
+.filter-group input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #0077ff;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 2px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
+}
+
+.filter-group input[type="range"]::-moz-range-thumb:hover {
+  background: #005fcc;
+}
+
+/* Label faixa de idade */
+.filter-group > div {
+  font-size: 0.85rem;
+  color: #666;
+  user-select: none;
+  margin-top: 4px;
+}
+
+/* Scrollbar customizada */
+.filter-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.filter-panel::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 3px;
+}
+
+/* Responsividade mobile */
+@media (max-width: 480px) {
+  .filter-panel {
+    width: calc(100vw - 32px); 
+    max-width: calc(100vw - 32px);
+    left: 16px;
+    right: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0);
+  }
+
+  .filter-content {
+    padding-right: 0;
+  }
+}

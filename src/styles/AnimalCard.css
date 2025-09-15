@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+div {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Container do slider de animais */
+.animal-slider {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  overflow-x: auto;     
+  scroll-snap-type: x mandatory;
+  flex-wrap: nowrap;    
+}
+
+.animal-slider::-webkit-scrollbar {
+  display: none;        
+}
+
+/* Card do animal */
+.animal-card {
+  flex: 0 0 auto;         
+  width: 220px;      
+  min-height: 320px;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.animal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.animal-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Info tag (nome, localização, sexo) */
+.info-tag {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background-color: rgba(255,255,255,0.95);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Info esquerda: nome e localização */
+.info-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 85%;
+}
+
+.info-left strong {
+  font-size: 1.3rem;
+  color: #000;
+}
+
+.location-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #808080;
+}
+
+.icon-small {
+  width: 12px;
+  height: 12px;
+}
+
+.info-right {
+  display: flex;
+  align-items: center;
+}
+
+.icon-sex {
+  width: 34px;
+  height: 34px;
+}
+
+
+
+@media (min-width: 768px) {
+  .animal-slider {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    max-width: 1200px;             
+    margin: 0 auto;              
+  }
+
+  .animal-card {
+    flex: 0 0 220px;   
+    height: 400px; 
+    min-width: 250px;   
+    margin: 10px 0;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .animal-card {
+    min-width: 300px;
+    min-height: 480px;
+  }
+}

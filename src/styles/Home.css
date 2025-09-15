@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* ====== Geral ====== */
+.home {
+  background: #ffffff; 
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  padding: 1rem 1rem; 
+  box-sizing: border-box; 
+}
+
+/* ====== Lista de localização ====== */
+.location {
+  position: relative; 
+}
+
+.location-list {
+  position: absolute;
+  top: 100%;           
+  left: 0;
+  margin-top: 6px;     
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  list-style: none;
+  padding: 0.4rem 0;
+  margin: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  min-width: 200px;    
+  max-height: 240px;    
+  overflow-y: auto;   
+  z-index: 1000;       
+}
+
+.location-list li {
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.location-list li:hover {
+  background: #f9f9f9;
+}
+
+
+/* ====== Título ====== */
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #333;
+}
+
+/* ====== Categorias ====== */
+
+.categories-section {
+  margin: 1rem 1.5rem;      
+  width: auto;      
+  padding: 0;              
+  box-sizing: border-box;  
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; 
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.categories button {
+  flex: 1 1 auto;        
+  min-width: 67px;          
+  min-height: 67px;         
+  padding: 10px;
+  display: flex;
+  align-items: center;       
+  justify-content: center;   
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  text-align: center;
+}
+
+/* Hover */
+.categories button:hover {
+  transform: translateY(-2px);
+  filter: brightness(0.95);
+}
+
+/* Cores de fundo por categoria */
+.categories button.cachorros { background: #E1E3F8; }
+.categories button.gatos { background: #FFEEEC; }
+.categories button.passaros { background: #EDF8E7; }
+.categories button.roedores { background: #FFF2D2; }
+
+/* Botão ativo */
+.categories button.active {
+  outline: 5px solid #FCA84B; 
+  outline-offset: 4px;         
+}
+
+
+/* Ícone centralizado */
+.category-icon {
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin: 0 auto;        
+}
+
+/* ====== Slider de animais ====== */
+.animal-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+.animal-slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* Responsividade: mantém largura mínima no mobile */
+@media (max-width: 767px) {
+  .categories button {
+    flex: 0 1 auto;
+    margin-top: 10px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .home {
+    max-width: 1200px; 
+    margin: 0 auto;   
+    padding: 2rem;
+  }
+}
